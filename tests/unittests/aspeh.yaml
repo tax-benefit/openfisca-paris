@@ -1,28 +1,43 @@
 - name: "Famille éligible pour l'allocation de soutien aux parents d’enfants handicapés"
   period: 2016-02
-  familles:
-    parents: ["couple1", "couple2"]
-    enfants: ["enfant1", "enfant2","enfant3"]
-    parisien: True
-  menages:
-    statut_occupation_logement: locataire_vide
-  individus:
-  - id: "couple1"
-    age: 55
-    salaire_net:
-      2016-01: 3100
-  - id: "couple2"
-    age: 55
-    chomage_net:
-      2016-01: 1400
-  - id: "enfant1"
-    age: 5
-  - id: "enfant2"
-    age: 7
-  - id: "enfant3"
-    age: 9
-    handicap: True
-  output_variables:
+  input:
+    familles:
+      _:
+        parents: [couple1, couple2]
+        enfants: [enfant1, enfant2, enfant3]
+        parisien: True
+    menages:
+      _: 
+        statut_occupation_logement: locataire_vide
+        personne_de_reference: [couple1]
+        conjoint: [couple2]
+        enfants: [enfant1, enfant2, enfant3]
+    individus:
+      couple1:
+        age: 55
+        salaire_net:
+          2016-01: 3100
+      couple2:
+        age: 55
+        chomage_net:
+          2016-01: 1400
+      enfant1:
+        age: 5
+      enfant2:
+        age: 7
+      enfant3:
+        age: 9
+        handicap: True
+    foyers_fiscaux:
+      _:
+        declarants:
+          - couple1
+          - couple2
+        personnes_a_charge:
+          - enfant1
+          - enfant2
+          - enfant3
+  output:
     paris_logement_aspeh: 153
 
 - name: "Famille non éligible pour l'allocation de soutien aux parents d’enfants handicapés"
@@ -45,7 +60,7 @@
       2016-01: 400
   - id: "enfant1"
     age: 5
-  output_variables:
+  output:
     paris_logement_aspeh: 0
 
 - name: "Famille non éligible pour l'allocation de soutien aux parents d’enfants handicapés"
@@ -71,7 +86,7 @@
   - id: "enfant2"
     age: 9
     handicap: True
-  output_variables:
+  output:
     paris_logement_aspeh: 153
 
 - name: "Famille éligible pour l'allocation de soutien aux parents d’enfants handicapés"
@@ -99,5 +114,5 @@
   - id: "enfant2"
     age: 9
     handicap: True
-  output_variables:
+  output:
     paris_logement_aspeh: 306
