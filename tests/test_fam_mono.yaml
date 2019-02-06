@@ -1,0 +1,59 @@
+- name: "Famille éligible pour l'aide Paris logement familles monoparentales "
+  period: 2019-02
+  input:
+    famille:
+      parents: [parent1]
+      enfants: [enfant1]
+      parisien: true
+      apl:
+        2019-01: 100
+    menage:
+      statut_occupation_logement: locataire_vide
+      personne_de_reference: parent1
+      enfants: [enfant1]
+      loyer: 400
+    individus:
+      parent1:
+        age: 35
+        salaire_net:
+          2019-01: 1000
+      enfant1:
+        age: 5
+    foyers_fiscaux:
+      foyer_fiscal_0:
+        declarants:
+        - parent1
+        personnes_a_charge:
+        - enfant1
+  output:
+    paris_logement_plfm: 150
+
+- name: "Famille éligible pour l'aide Paris logement familles monoparentales "
+  period: 2019-02
+  input:
+    famille:
+      parents: [parent1]
+      enfants: [enfant1]
+      parisien: true
+      apl:
+        2019-01: 100
+    menage:
+      statut_occupation_logement: locataire_vide
+      personne_de_reference: parent1
+      enfants: [enfant1]
+      loyer: 400
+    individus:
+      parent1:
+        age: 35
+        salaire_net:
+          2019-01: 1500
+      enfant1:
+        age: 5
+    foyers_fiscaux:
+      foyer_fiscal_0:
+        declarants:
+        - parent1
+        personnes_a_charge:
+        - enfant1
+  output:
+    paris_logement_plfm: 128
