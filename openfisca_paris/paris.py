@@ -24,6 +24,7 @@ class paris_base_ressources_i(Variable):
         aah = individu('aah', period)
         asi = individu('asi', period)
         caah = individu('caah', period)
+        mva = individu('mva', period)
 
         salaire_net = individu('salaire_net', period)
         indemnites_stage = individu('indemnites_stage', period)
@@ -52,7 +53,7 @@ class paris_base_ressources_i(Variable):
             return revenus_auto_entrepreneur + tns_micro_entreprise_benefice + tns_benefice_exploitant_agricole + tns_autres_revenus
 
         result = (
-            ass + aah + asi + caah
+            ass + aah + asi + caah + mva
             + salaire_net + indemnites_stage_imposable + revenus_stage_formation_pro
             + chomage_net + allocation_securisation_professionnelle + indemnites_journalieres + indemnites_chomage_partiel + indemnites_volontariat
             + prestation_compensatoire + retraite_nette + pensions_invalidite
