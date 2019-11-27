@@ -41,6 +41,7 @@ class paris_base_ressources_i(Variable):
         prestation_compensatoire = individu('prestation_compensatoire', period)
         retraite_nette = individu('retraite_nette', period)
         pensions_invalidite = individu('pensions_invalidite', period)
+        pensions_alimentaires_percues = individu('pensions_alimentaires_percues', period)
 
         def revenus_tns():
             revenus_auto_entrepreneur = individu('tns_auto_entrepreneur_benefice', period, options = [ADD])
@@ -56,7 +57,7 @@ class paris_base_ressources_i(Variable):
             ass + aah + asi + caah + mva
             + salaire_net + indemnites_stage_imposable + revenus_stage_formation_pro
             + chomage_net + allocation_securisation_professionnelle + indemnites_journalieres + indemnites_chomage_partiel + indemnites_volontariat
-            + prestation_compensatoire + retraite_nette + pensions_invalidite
+            + prestation_compensatoire + retraite_nette + pensions_invalidite + pensions_alimentaires_percues
             + revenus_tns()
             )
 
